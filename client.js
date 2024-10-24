@@ -14,6 +14,14 @@ const connect = function () {
   conn.on('connect', () => {
     conn.write("Name: MPN");
   });
+  // conn.on('connect', () => {
+  //   conn.write("Move: up");
+  // });
+  // conn.on('connect', () => {
+  //   setInterval(() => {
+  //     conn.write('Move: left');
+  //   }, 200);
+  // })
   // when it receives data, it will callback data as a function and console log it
   conn.on('data', (data) => {
     console.log('the server says', data);
@@ -22,3 +30,9 @@ const connect = function () {
 };
 
 module.exports = connect;
+
+
+// "Move: up" - move up one square (unless facing down)
+// "Move: down" - move down one square (unless facing up)
+// "Move: left" - move left one square (unless facing right)
+// "Move: right" - move left one square (unless facing left)

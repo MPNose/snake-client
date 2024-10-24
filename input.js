@@ -24,6 +24,15 @@ const handleUserInput = function (key) {
   if (key === 'd') {
     connection.write("Move: right");
   }
+  if (key === 'b') {
+    connection.write("Say: too slow");
+  }
+  if (key === 'n') {
+    connection.write("Say: nope");
+  }
+  if (key === 'm') {
+    connection.write("Say: darn!");
+  }
   if (key === "\u0003") {//code representing control c 
     process.exit();
   }

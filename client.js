@@ -8,6 +8,12 @@ const connect = function () {
 
   // interpret incoming data as text
   conn.setEncoding("utf8");
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server");
+  });
+  conn.on('connect', () => {
+    conn.write("Name: MPN");
+  });
   // when it receives data, it will callback data as a function and console log it
   conn.on('data', (data) => {
     console.log('the server says', data);
